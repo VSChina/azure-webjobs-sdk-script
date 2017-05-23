@@ -34,7 +34,7 @@ namespace Microsoft.Azure.WebJobs.Script.Description
         [SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
         protected override IFunctionInvoker CreateFunctionInvoker(string scriptFilePath, BindingMetadata triggerMetadata, FunctionMetadata functionMetadata, Collection<FunctionBinding> inputBindings, Collection<FunctionBinding> outputBindings)
         {
-            return new JavaFunctionInvoker(Host, functionMetadata/*, inputBindings, outputBindings*/);
+            return new JavaFunctionInvoker(Host, triggerMetadata, functionMetadata/*, inputBindings*/, outputBindings);
         }
     }
 }
